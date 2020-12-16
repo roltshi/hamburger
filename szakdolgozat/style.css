@@ -1,0 +1,699 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+.dark-theme {
+  -webkit-transition: ease 0.25s;
+  transition: ease 0.25s;
+  background-color: #1a1c20 !important;
+  color: #f4f4f4 !important;
+}
+
+.dark-theme label {
+  color: #1a1c20;
+}
+
+/*
+##
+##    Input nyilak letiltása
+##
+*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input[type="checkbox"] {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+}
+
+/*
+##
+##    Scrollbar stilusa
+##
+*/
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/*
+##
+##    Globális Beállítások
+##
+*/
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f4f4f4;
+  font-family: "Raleway", sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+form {
+  width: 80%;
+}
+
+.category-text {
+  text-transform: uppercase;
+  font-size: 25px;
+  width: 100%;
+  text-align: center;
+  margin: 30px 0;
+}
+
+.hiba {
+  margin: 0;
+  padding: 0;
+  color: red;
+  font-size: 22px;
+}
+
+.siker {
+  font-size: 22px;
+  color: lime;
+}
+
+.osszegjelzo {
+  font-family: Arial, Helvetica, sans-serif;
+  display: none;
+  border-radius: 20px;
+  padding: 8px;
+  font-size: 25px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  position: fixed;
+  margin: 5px;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+  background-color: #f0a500;
+  color: #0b0c0e;
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.osszeg {
+  display: none;
+}
+
+/*
+##
+##    Navigációs menü
+##
+*/
+nav {
+  width: 100%;
+  background-color: #f0a500;
+}
+
+nav .theme-changer a {
+  cursor: pointer;
+  color: black;
+}
+
+nav .theme-changer a:hover {
+  border-bottom: none !important;
+  color: #3b3a3a;
+}
+
+nav a:hover {
+  text-decoration: none;
+}
+
+nav .logo {
+  color: #f0a500;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav .logo a {
+  text-decoration: none;
+  color: #1a1c20;
+}
+
+nav .logo i {
+  color: #1a1c20;
+  margin: 10px;
+}
+
+nav .logo h3 {
+  margin: 10px;
+  font-size: 25px;
+  text-transform: uppercase;
+}
+
+nav ul {
+  margin: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  list-style: none;
+}
+
+nav ul li {
+  font-size: 18px;
+  margin: 0 10px;
+}
+
+nav ul li a {
+  color: #1a1c20 !important;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+nav ul li a:hover {
+  color: black !important;
+  border-bottom: 1px solid black;
+}
+
+/*
+##
+##    Üdvözlő szöveg
+##
+*/
+#main-text {
+  padding: 30px 0;
+  text-align: center;
+}
+
+/*
+##
+##    Fő háttér
+##
+*/
+.fokep {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("images/background.jpg");
+  width: 100%;
+  height: 300px;
+}
+
+/*
+##
+##    Hamburger section
+##
+*/
+.burgerinfo {
+  border-radius: 30px;
+  -webkit-box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  -ms-box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  -o-box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  margin: 20px;
+  padding: 20px 0;
+  background-color: #0b0c0e;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.burgerinfo label {
+  margin: 0 0 15px 0;
+  font-size: 27px;
+  font-weight: 400;
+  color: #f4f4f4;
+}
+
+.burgerinfo input {
+  font-size: 18px;
+  padding: 5px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+}
+
+#nevgenerator {
+  cursor: pointer;
+}
+
+.fofeltet {
+  text-align: center;
+}
+
+/*
+##
+##    Feltét section
+##
+*/
+.feltet {
+  border-radius: 30px;
+  -webkit-box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  -ms-box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  -o-box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  background-color: #0b0c0e;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.item {
+  -webkit-transition: ease 0.6s;
+  transition: ease 0.6s;
+  border-radius: 20px;
+  overflow: hidden;
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  background-color: white;
+  margin: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 200px;
+  cursor: pointer;
+}
+
+.item .controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+.item .bottom {
+  -webkit-transition: ease 0.6s;
+  transition: ease 0.6s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 5px 0;
+  margin: 0;
+  width: 100%;
+  background-color: #f0a500;
+}
+
+.item input {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  outline: none;
+  border: none;
+  background-color: white;
+  color: #1a1c20;
+  padding: 5px;
+  font-size: 18px;
+  width: 50%;
+}
+
+.item input[type="button"] {
+  color: #1a1c20;
+  width: 100%;
+  background-color: #f0a500;
+  padding: 5px;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 30px;
+}
+
+.item input[type="button"]:hover {
+  background-color: #a84111;
+}
+
+.item span {
+  min-height: 70px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 5px;
+  text-align: center;
+  font-size: 20px;
+  color: #0b0c0e !important;
+}
+
+.item img {
+  padding-bottom: 10px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  margin: 0 0 33px 0;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 100px;
+}
+
+.sum {
+  cursor: pointer;
+}
+
+/*
+##
+##    Submit és Reset gombok
+##
+*/
+.buttons {
+  width: 100%;
+  height: 150px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.buttons input {
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  border: none;
+  background-color: #f0a500;
+  color: #1a1c20;
+  padding: 10px;
+  cursor: pointer;
+  margin: 5px;
+  text-transform: uppercase;
+  font-size: 20px;
+  border-radius: 10px;
+}
+
+.buttons input:hover {
+  background-color: #f7d8b0;
+}
+
+/*
+##
+##    Mások hamburgerei section
+##
+*/
+#masok-hamburger {
+  margin-top: 20px;
+  -webkit-box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  -ms-box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  -o-box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  overflow: auto;
+  background-color: #0b0c0e;
+  width: 80%;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#masok-hamburger td {
+  vertical-align: inherit;
+}
+
+#masok-hamburger .editrow {
+  text-align: center;
+  vertical-align: inherit;
+}
+
+#masok-hamburger .editrow i {
+  cursor: pointer;
+  margin: 5px;
+}
+
+#masok-hamburger .editrow i:first-child:hover {
+  color: red;
+}
+
+#masok-hamburger .editrow i:hover {
+  color: #f0a500;
+}
+
+#masok-hamburger th {
+  background-color: #0b0c0e;
+  text-align: left;
+}
+
+.filled {
+  color: red;
+}
+
+/*
+##
+##    Comment section
+##
+*/
+.comments {
+  width: 80%;
+  background-color: #d8d8d8;
+}
+
+.comments .chat {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #1a1c20;
+  padding: 18px;
+}
+
+.comments .chat textarea {
+  width: 100%;
+  min-height: 200px;
+  resize: none;
+}
+
+.comments .chat form {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.comments .chat form label {
+  font-size: 18px;
+  color: white;
+}
+
+.comments .chat input[type="submit"] {
+  cursor: pointer;
+  border: none;
+  min-width: 80px;
+  margin-top: 10px;
+  background-color: #f0a500;
+  color: #1a1c20;
+  font-size: 18px;
+}
+
+.comments .chat input[type="submit"]:hover {
+  background-color: #bd8100;
+}
+
+.comments .body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.comments .body .comment-header {
+  width: 100%;
+  background-color: #0b0c0e;
+  color: white;
+  padding: 3px;
+}
+
+.comments .body .comment-header a {
+  cursor: pointer;
+  color: yellow;
+}
+
+.comments .body .comment-content {
+  color: black;
+  padding: 5px;
+}
+
+/*
+##
+##    Media Queryk
+##
+*/
+@media screen and (max-width: 800px) {
+  .nev {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #nevgenerator {
+    margin: 12px 0;
+  }
+  .hiba {
+    text-align: center;
+  }
+  .comments .chat form {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .item span {
+    min-height: 40px;
+  }
+  .item img {
+    padding-bottom: 10px;
+  }
+  .item input[type="button"] {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .item {
+    margin: 15px;
+    width: 120px;
+  }
+  .item .bottom {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0;
+  }
+  .item input {
+    padding: 5px;
+    font-size: 14px;
+  }
+  .item span {
+    padding: 5px;
+    text-align: center;
+    font-size: 14px;
+  }
+  .item img {
+    margin: 5px 0;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    width: 70px;
+  }
+  .buttons input {
+    font-size: 15px;
+  }
+  #masok-hamburger {
+    width: 90%;
+  }
+}
+/*# sourceMappingURL=style.css.map */
