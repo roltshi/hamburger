@@ -1,9 +1,9 @@
 <?php
 ob_start();
 $servername = "localhost";
-$username = "hrolandw_burgeradmin";
-$pass = "ZsomiZsomiZsomi";
-$databse = "hrolandw_myburger";
+$username = "";
+$pass = "";
+$databse = "";
 
 $mysqli = new mysqli($servername, $username, $pass, $databse);
 
